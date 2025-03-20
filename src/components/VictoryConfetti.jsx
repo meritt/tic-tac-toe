@@ -20,13 +20,25 @@ const VictoryConfetti = ({ isActive }) => {
   if (!isVisible) return null;
 
   return (
-    <Confetti
-      width={width}
-      height={height}
-      recycle={false}
-      numberOfPieces={500}
-      gravity={0.2}
-    />
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 1000, // Высокий z-index для размещения поверх всего
+        pointerEvents: "none", // Чтобы конфетти не мешало нажатиям
+      }}
+    >
+      <Confetti
+        width={width}
+        height={height}
+        recycle={false}
+        numberOfPieces={500}
+        gravity={0.2}
+      />
+    </div>
   );
 };
 

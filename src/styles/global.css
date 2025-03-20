@@ -25,7 +25,7 @@ body {
   max-width: 800px;
   width: 100%;
   position: relative;
-  z-index: 1; /* Над конфетти */
+  z-index: 10; /* Средний z-index - выше фона, но ниже конфетти */
 }
 
 h1 {
