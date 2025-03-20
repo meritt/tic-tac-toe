@@ -1,17 +1,22 @@
 .square {
-  width: 80px;
-  height: 80px;
+  width: 100px; /* Увеличиваем размер с 80px до 100px */
+  height: 100px; /* Увеличиваем размер с 80px до 100px */
   background: #fff;
-  border: 1px solid #999;
+  border: 2px solid #999; /* Делаем границу толще */
   float: left;
-  font-size: 34px; /* Увеличим размер шрифта */
+  font-size: 48px; /* Увеличиваем размер шрифта с 34px до 48px */
   font-weight: bold;
-  line-height: 80px;
-  margin-right: -1px;
-  margin-top: -1px;
+  line-height: 100px;
+  margin-right: -2px; /* Соответствует толщине границы */
+  margin-top: -2px; /* Соответствует толщине границы */
   padding: 0;
   text-align: center;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.square:hover {
+  background-color: #f0f0f0;
 }
 
 .square:focus {

@@ -4,7 +4,7 @@ import "./styles/global.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app-container">
       <h1>Крестики-нолики</h1>
       <Game />
     </div>
