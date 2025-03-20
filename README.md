@@ -1,12 +1,39 @@
-# React + Vite
+# Игра "Крестики-нолики"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простая реализация классической игры "Крестики-нолики" с использованием React и Vite.
 
-Currently, two official plugins are available:
+## Функциональность
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Игра для двух игроков (X и O)
+- Синие крестики и красные нолики
+- История ходов с возможностью возврата к любому ходу
+- Автоматическое определение победителя или ничьей
+- Интерфейс на русском языке
 
-## Expanding the ESLint configuration
+## Технологии
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- JavaScript
+- CSS
+- Vite
+
+## Запуск проекта
+
+```bash
+# Установка зависимостей
+npm install
+
+# Запуск в режиме разработки
+npm run dev
+
+# Сборка для продакшена
+npm run build
+```
+
+## Скриншот
+
+![Скриншот игры](screenshot.png)
+
+## Процесс разработки
+
+Проект был создан в учебных целях для практики работы с React и состоянием компонентов.
