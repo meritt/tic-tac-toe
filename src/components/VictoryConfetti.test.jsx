@@ -1,22 +1,26 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render } from "@testing-library/react";
 import VictoryConfetti from "./VictoryConfetti";
 
-// Мокаем react-confetti, чтобы избежать сложностей с канвасом в тестах
+// Мокаем хук useWindowSize
+vi.mock("../hooks/useWindowSize", () => ({
+  useWindowSize: () => ({ width: 1024, height: 768 }),
+}));
+
+// Мокаем react-confetti
 vi.mock("react-confetti", () => ({
   default: vi
     .fn()
     .mockImplementation(() => <div data-testid="mock-confetti" />),
 }));
 
-// Мокаем хук useWindowSize
-vi.mock("../hooks/useWindowSize", () => ({
-  useWindowSize: vi.fn().mockReturnValue({ width: 1024, height: 768 }),
-}));
-
 describe("VictoryConfetti", () => {
   beforeEach(() => {
     vi.useFakeTimers();
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
   });
 
   it("не должен отображаться, когда isActive: false", () => {

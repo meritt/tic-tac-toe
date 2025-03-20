@@ -11,6 +11,12 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/test/setup.js"
+    ]
+  },
   "dependencies": {
     "react": "^19.0.0",
     "react-confetti": "^6.4.0",
