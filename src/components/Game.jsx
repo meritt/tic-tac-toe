@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Board from "./Board";
 import Status from "./Status";
+import VictoryConfetti from "./VictoryConfetti";
 import { calculateWinner } from "../utils/gameLogic";
 import "../styles/Game.css";
 
@@ -8,6 +9,7 @@ const Game = () => {
   const [history, setHistory] = useState([{ squares: Array(9).fill(null) }]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXIsNext] = useState(true);
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleClick = (i) => {
     const currentHistory = history.slice(0, stepNumber + 1);
@@ -29,16 +31,29 @@ const Game = () => {
   const jumpTo = (step) => {
     setStepNumber(step);
     setXIsNext(step % 2 === 0);
+    setShowConfetti(false); // Скрываем конфетти при перемотке истории
   };
 
   const current = history[stepNumber];
   const winner = calculateWinner(current.squares);
 
+  // Показываем конфетти при победе
+  useEffect(() => {
+    if (winner) {
+      setShowConfetti(true);
+    }
+  }, [winner]);
+
   const moves = history.map((_, move) => {
     const desc = move ? `Вернуться к ходу №${move}` : "К началу игры";
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{desc}</button>
+        <button
+          onClick={() => jumpTo(move)}
+          className={stepNumber === move ? "active" : ""}
+        >
+          {desc}
+        </button>
       </li>
     );
   });
@@ -53,15 +68,18 @@ const Game = () => {
   }
 
   return (
-    <div className="game">
-      <div className="game-board">
-        <Board squares={current.squares} onClick={handleClick} />
+    <>
+      <VictoryConfetti isActive={showConfetti} />
+      <div className="game">
+        <div className="game-board">
+          <Board squares={current.squares} onClick={handleClick} />
+        </div>
+        <div className="game-info">
+          <Status status={status} />
+          <ol>{moves}</ol>
+        </div>
       </div>
-      <div className="game-info">
-        <Status status={status} />
-        <ol>{moves}</ol>
-      </div>
-    </div>
+    </>
   );
 };
 

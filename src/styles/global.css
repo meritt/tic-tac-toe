@@ -8,6 +8,8 @@ body {
   align-items: center;
   background: linear-gradient(135deg, #6e8efb, #a777e3);
   color: #333;
+  position: relative; /* Для позиционирования конфетти */
+  overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
 }
 
 * {
@@ -22,6 +24,8 @@ body {
   margin: 20px;
   max-width: 800px;
   width: 100%;
+  position: relative;
+  z-index: 1; /* Над конфетти */
 }
 
 h1 {
@@ -40,4 +44,21 @@ h1 {
 .o-symbol {
   color: #cc0000; /* Красный цвет */
   font-weight: bold;
+}
+
+/* Анимация для заголовка при победе */
+@keyframes winTitle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.win-animation {
+  animation: winTitle 1s ease-in-out;
 }
