@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Game from "./components/Game";
 import VictoryConfetti from "./components/VictoryConfetti";
 import "./styles/global.css";
