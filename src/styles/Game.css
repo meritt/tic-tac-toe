@@ -14,9 +14,9 @@
 }
 
 .game-board {
+  padding: 20px;
   background: #f9f9f9;
   border-radius: 8px;
-  padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -24,9 +24,9 @@
   margin-left: 0;
   margin-top: 20px;
   padding: 15px;
+  min-width: 200px;
   background: #f9f9f9;
   border-radius: 8px;
-  min-width: 200px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,19 +38,19 @@
 }
 
 .game-info ol {
-  padding-left: 20px;
   margin-top: 10px;
+  padding-left: 20px;
 }
 
 .game-info button {
+  min-width: 180px;
   margin-bottom: 8px;
   padding: 8px 12px;
-  cursor: pointer;
-  background: white;
+  font-family: "Arial", sans-serif;
+  background: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-family: "Arial", sans-serif;
-  min-width: 180px;
+  cursor: pointer;
   transition: all 0.2s;
 }
 
@@ -62,9 +62,9 @@
 
 /* Стиль для активного хода */
 .game-info button.active {
+  font-weight: bold;
+  color: #0d47a1;
   background-color: #e3f2fd;
   border-color: #2196f3;
-  color: #0d47a1;
-  font-weight: bold;
   box-shadow: 0 2px 5px rgba(33, 150, 243, 0.3);
 }

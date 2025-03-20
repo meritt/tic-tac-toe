@@ -1,27 +1,27 @@
 .status {
   margin-bottom: 15px;
+  padding: 10px;
   font-size: 20px;
   font-weight: bold;
   font-family: "Arial", sans-serif;
-  padding: 10px;
+  text-align: center;
   background-color: #f5f5f5;
   border-radius: 5px;
-  text-align: center;
 }
 
 /* Стили для X и O в статусе игры */
 .status .x-symbol {
-  color: #0066cc; /* Синий цвет */
   font-weight: bold;
+  color: #0066cc;
 }
 
 .status .o-symbol {
-  color: #cc0000; /* Красный цвет */
   font-weight: bold;
+  color: #cc0000;
 }
 
 /* Стили для сообщения о победителе */
 .status.winner {
-  background-color: #e8f5e9;
   color: #2e7d32;
+  background-color: #e8f5e9;
 }
